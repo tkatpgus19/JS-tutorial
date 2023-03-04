@@ -1,0 +1,45 @@
+body{
+    margin: 0px;
+}
+
+div{
+    box-sizing: border-box;
+}
+.header{
+    width: 100vw;
+    height: 70px;
+}
+
+.header nav{
+    width: 100vw;
+    height: 100%;
+    color: white;
+    background-color: black;
+}
+
+nav p{
+    float: left;
+    font-size: 20px;
+    margin: 20px 20px 0px 0px;
+    cursor: pointer;
+}
+nav .nav-title{
+    font-size: 25px;
+    margin: 17px 30px 17px 20px;
+}
+
+/* 네브바 */
+
+.content{
+    width: 100vw;
+    background-color: lightgray;
+}
+
+.content-top{
+    padding: 40px;
+}
+.content-top input{
+    height: 30px;
+    width: 200px;
+    font-size: 20px;
+}
