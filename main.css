@@ -102,7 +102,7 @@ button{
 }
 .cart-dragarea{
     width: 100%;
-    height: 80%;
+    height: 87%;
     text-align: center;
     display: flex;
     padding-top: 1px;
@@ -138,7 +138,7 @@ button{
 #name{
     height: 20px;
 }
-#phone{
+#number{
     height: 20px;
     display: block;
 }
@@ -156,12 +156,15 @@ h2{
 .hide{
     display: none;
 }
-
+canvas{
+    border-bottom: 1px solid lightgray;
+}
 .canvas{
     position: fixed;
     background-color: white;
     height: 560px;
-    left: 400px;
+    width: 520px;
+    left: 600px;
     right: 400px;
     top: 200px;
     z-index: 5;

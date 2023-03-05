@@ -15,7 +15,7 @@ let addItems = function(data){
         cardContainer.insertAdjacentHTML('beforeend', template1);
         var id = a.id;
         id.toString();
-        cartList.push( {id : 1} )
+        cartList.push( {id : 0} )
     });
 }
 
@@ -36,9 +36,9 @@ function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
 
-    if(cartList[data].id >1){
+    if(cartList[data].id >0){
         var test = document.getElementById(`${data}th`);
-        test.childNodes[9].value = cartList[data].id++;
+        test.childNodes[9].value = ++cartList[data].id;
     }
     else{
         var tmp = `<div class="item-card" id="${products.products[data].id}th" draggable="true">
@@ -46,7 +46,7 @@ function drop(ev) {
                 <p class="item-title">${products.products[data].title}</p>
                 <p class="item-brand">${products.products[data].brand}</p>
                 <p class="item-price">${products.products[data].price}</p>
-                <input value="${cartList[data].id}">
+                <input value="${cartList[data].id+1}">
                 </div>`;
         dragarea.insertAdjacentHTML('beforeend', tmp);
         cartList[data].id++;
@@ -69,9 +69,9 @@ fetch('store.json')
         a.addEventListener('click', (e)=>{
             var value = e.currentTarget.id;
 
-            if(cartList[value].id >1){
+            if(cartList[value].id >0){
                 var test = document.getElementById(`${value}th`);
-                test.childNodes[9].value = cartList[value].id++;
+                test.childNodes[9].value = ++cartList[value].id;
             }
             else{
                 var tmp = `<div class="item-card" id="${products.products[value].id}th" draggable="true">
@@ -79,7 +79,7 @@ fetch('store.json')
                         <p class="item-title">${products.products[value].title}</p>
                         <p class="item-brand">${products.products[value].brand}</p>
                         <p class="item-price">${products.products[value].price}</p>
-                        <input value="${cartList[value].id}">
+                        <input value="${cartList[value].id+1}">
                         </div>`;
                 dragarea.insertAdjacentHTML('beforeend', tmp);
                 cartList[value].id++;
@@ -134,7 +134,40 @@ document.querySelector('.canvas button').addEventListener('click', ()=>{
 })
 
 
-document.querySelector('.inputBtn').addEventListener('click', ()=>{
-    modal.classList.add('hide');
-    document.querySelector('.canvas').classList.remove('hide');
+document.querySelector('.inputBtn').addEventListener('click', (e)=>{
+    var name = document.querySelector('#name').value;
+    var number = document.querySelector('#number').value;
+    if(name == '' || number == ''){
+        e.preventDefault();
+        alert('이름 또는 연락처를 입력하세요');
+    }
+    else{
+        modal.classList.add('hide');
+        document.querySelector('.canvas').classList.remove('hide');
+
+        var now = new Date();
+        var currentTime = `${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}  ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
+        var canvas = document.getElementById('canvas'); 
+        var c = canvas.getContext('2d');
+        c.font = '900 25px Arial';
+        c.fillText('영수증', 30, 30); 
+        c.font = '700 16px Arial';
+        c.fillText(currentTime, 30, 65); 
+        
+        var num = 105;
+        var totalCnt = 0;
+        console.log(cartList);
+        cartList.forEach((a, i)=>{
+            if(a.id){
+                num += 20;
+                c.fillText(products.products[i].title, 30, num);
+                totalCnt += a.id;
+                console.log(a);
+            }
+        })
+        c.fillText(`가격 : ${total}`, 30, num + 20);
+        c.fillText(`수량 : ${totalCnt}`, 30, num + 40);
+        c.fillText(`합계 : ${total}`, 30, num + 60);
+        c.fillText(`총 합계 : ${total}`, 30, num + 160);
+    }
 })
