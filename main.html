@@ -8,6 +8,16 @@
     <title>JS-tutorial</title>
 </head>
 <body>
+    <div class="modal-bg hide">
+        <div class="modal-fg">
+            <h2>성함</h2>
+            <input id="name">
+            <h2>연락처</h2>
+            <input id="phone">
+            <button class="inputBtn">입력완료</button>
+            <button class="closeBtn">닫기</button>
+        </div>
+    </div>
     <div class="header">
         <nav>
             <p class="nav-title">집꾸미기</p>
@@ -26,12 +36,34 @@
         <div class="content-bottom">
             <div class="cart-container">
                 <h2>장바구니</h2>
-                <div class="cart-dragarea">
-                    <h2 class="cart-hint">여기로 드래그</h2>
+                <div class="cart-dragarea" ondrop="drop(event)" ondragover="allowDrop(event)">
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="result">
+        <h1>최종가격</h1>
+        <h2>합계 </h2>
+        <button class="buyBtn">구매하기</button>
+    </div>
+
+
+    <div class="canvas hide">
+        <div class="canvas-top">
+            <div class="canvas-dummy"></div>
+        </div>
+        <canvas id="canvas" width="510" height="450"></canvas> 
+        <button>닫기</button>
+    </div>
+
+    <script> 
+        var canvas = document.getElementById('canvas'); 
+        var c = canvas.getContext('2d');
+        c.font = '900 25px Arial';
+        c.fillText('영수증', 30, 40); 
+    </script> 
+
     <script src="main.js"></script>
 </body>
 </html>

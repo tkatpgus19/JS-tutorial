@@ -60,6 +60,7 @@ nav .nav-title{
 .item-img{
     width: 80%;
     margin: 10%;
+    -webkit-user-drag: none;
 }
 .item-title{
     font-weight: bold;
@@ -71,7 +72,7 @@ nav .nav-title{
 .item-price{
     font-size: 18px;
 }
-.item-card button{
+button{
     width: 60px;
     height: 35px;
     font-size: 16px;
@@ -82,11 +83,15 @@ nav .nav-title{
     cursor: pointer;
     margin: 0px 20px 20px 20px;
 }
-
+.item-card input{
+    margin-bottom: 20px;
+    height: 20px;
+}
 /* 쇼핑 아이템 */
 
 .content-bottom{
     width: 100%;
+    margin-top: 9%;
     padding: 40px;
 }
 .cart-container{
@@ -97,12 +102,84 @@ nav .nav-title{
 }
 .cart-dragarea{
     width: 100%;
-    height: 85%;
+    height: 80%;
     text-align: center;
+    display: flex;
     padding-top: 1px;
     background-color: black;
-    color: white;
 }
 .cart-hint{
+    color: white;
     margin-top: 250px;
+}
+
+.result{
+    margin: 40px;
+}
+
+.buyBtn{
+    width: 100px;
+    margin-left: 0;
+}
+
+
+.modal-bg{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+.modal-fg{
+    background-color: white;
+    border-radius: 2px;
+    margin: 100px 30px;
+    padding: 30px;
+}
+#name{
+    height: 20px;
+}
+#phone{
+    height: 20px;
+    display: block;
+}
+h2{
+    margin-bottom: 10px;
+}
+.inputBtn{
+    width: 100px;
+    margin: 20px 0px 0px 0px;
+}
+.closeBtn{
+    width: 100px;
+    margin: 20px 0px 0px 0px;
+}
+.hide{
+    display: none;
+}
+
+.canvas{
+    position: fixed;
+    background-color: white;
+    height: 560px;
+    left: 400px;
+    right: 400px;
+    top: 200px;
+    z-index: 5;
+    border: 1px solid black;
+}
+.canvas-top{
+    background-color: lightgray;
+    height: 40px;
+    margin: 5px;
+}
+.canvas-dummy{
+    float: right;
+    width: 25px;
+    height: 25px;
+    margin: 7px;
+    border: 1px solid black;
+}
+.canvas button{
+    float: right;
+    margin: 5px 20px;
 }
