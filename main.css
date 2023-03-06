@@ -1,78 +1,89 @@
-body{
+body {
     margin: 0;
 }
 
-div{
+div {
     box-sizing: border-box;
 }
-.header{
+
+.header {
     width: 100%;
     height: 70px;
 }
 
-.header nav{
+.header nav {
     width: 100%;
     height: 100%;
     color: white;
     background-color: black;
 }
 
-nav p{
+nav p {
     float: left;
     font-size: 20px;
     margin: 20px 20px 0px 0px;
     cursor: pointer;
 }
-nav .nav-title{
+
+nav .nav-title {
     font-size: 25px;
     margin: 17px 30px 17px 20px;
 }
 
 /* 네브바 */
 
-.content{
+.content {
     width: 100%;
     background-color: lightgray;
 }
 
-.content-top{
+.content-top {
     padding: 10px;
     height: 470px;
 }
-.content-top input{
+
+.content-top input {
     height: 30px;
     width: 200px;
     margin: 15px;
     font-size: 20px;
 }
-.item-container{
+
+.item-container {
     display: flex;
 }
-.item-card{
+
+.item-card {
     background-color: white;
     width: 25%;
     height: fit-content;
     margin: 15px;
 }
-.item-card p{
+
+.item-card p {
     margin: 5px 20px;
 }
-.item-img{
+
+.item-img {
     width: 80%;
     margin: 10%;
     -webkit-user-drag: none;
 }
-.item-title{
+
+.item-title {
     font-weight: bold;
     font-size: 20px;
 }
-.item-brand{
+
+.item-brand {
     font-size: 16px;
 }
-.item-price{
+
+.item-price {
     font-size: 18px;
 }
-button{
+
+button {
     width: 60px;
     height: 35px;
     font-size: 16px;
@@ -83,24 +94,28 @@ button{
     cursor: pointer;
     margin: 0px 20px 20px 20px;
 }
-.item-card input{
+
+.item-card input {
     margin-bottom: 20px;
     height: 20px;
 }
+
 /* 쇼핑 아이템 */
 
-.content-bottom{
+.content-bottom {
     width: 100%;
     margin-top: 9%;
     padding: 40px;
 }
-.cart-container{
+
+.cart-container {
     width: 100%;
     height: 700px;
     padding: 20px 30px;
     background-color: gray;
 }
-.cart-dragarea{
+
+.cart-dragarea {
     width: 100%;
     height: 87%;
     text-align: center;
@@ -108,58 +123,71 @@ button{
     padding-top: 1px;
     background-color: black;
 }
-.cart-hint{
+
+.cart-hint {
     color: white;
     margin-top: 250px;
 }
 
-.result{
+.result {
     margin: 40px;
 }
 
-.buyBtn{
+.buyBtn {
     width: 100px;
     margin-left: 0;
 }
 
+/* 장바구니 구역 */
 
-.modal-bg{
+.modal-bg {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
-.modal-fg{
+
+.modal-fg {
     background-color: white;
     border-radius: 2px;
     margin: 100px 30px;
     padding: 30px;
 }
-#name{
+
+#name {
     height: 20px;
 }
-#number{
+
+#number {
     height: 20px;
     display: block;
 }
-h2{
+
+h2 {
     margin-bottom: 10px;
 }
-.inputBtn{
+
+.inputBtn {
     width: 100px;
     margin: 20px 0px 0px 0px;
 }
-.closeBtn{
+
+.closeBtn {
     width: 100px;
     margin: 20px 0px 0px 0px;
 }
-.hide{
+
+.hide {
     display: none;
 }
-canvas{
+
+/* 모달창 */
+
+canvas {
     border-bottom: 1px solid lightgray;
 }
-.canvas{
+
+.canvas {
     position: fixed;
     background-color: white;
     height: 560px;
@@ -170,19 +198,24 @@ canvas{
     z-index: 5;
     border: 1px solid black;
 }
-.canvas-top{
+
+.canvas-top {
     background-color: lightgray;
     height: 40px;
     margin: 5px;
 }
-.canvas-dummy{
+
+.canvas-dummy {
     float: right;
     width: 25px;
     height: 25px;
     margin: 7px;
     border: 1px solid black;
 }
-.canvas button{
+
+.canvas button {
     float: right;
     margin: 5px 20px;
 }
+
+/* 영수증 */
